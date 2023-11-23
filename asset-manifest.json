@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/garotos_vila/static/css/main.7108d48f.css",
+    "main.js": "/garotos_vila/static/js/main.28d25b4f.js",
+    "static/js/787.f3eeedec.chunk.js": "/garotos_vila/static/js/787.f3eeedec.chunk.js",
+    "static/media/apresentacao1.png": "/garotos_vila/static/media/apresentacao1.b12e09f8e6f1fe19646b.png",
+    "static/media/garotos_vila_bg.png": "/garotos_vila/static/media/garotos_vila_bg.63950744da22ba721c52.png",
+    "static/media/apresentacao2.png": "/garotos_vila/static/media/apresentacao2.a50aca71e81d0b2b2344.png",
+    "index.html": "/garotos_vila/index.html",
+    "main.7108d48f.css.map": "/garotos_vila/static/css/main.7108d48f.css.map",
+    "main.28d25b4f.js.map": "/garotos_vila/static/js/main.28d25b4f.js.map",
+    "787.f3eeedec.chunk.js.map": "/garotos_vila/static/js/787.f3eeedec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7108d48f.css",
+    "static/js/main.28d25b4f.js"
+  ]
+}
