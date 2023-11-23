@@ -1,30 +1,41 @@
-import React, { useState } from 'react'; //import framework react e use state
-import './Doacoes.css'; //importa css para estilizar
+import React, { useState } from 'react';
+import './Doacoes.css';
 
 const Doacoes = () => {
-  const [formData, setFormData] = useState({  //estrutura dados do formulario
+  const [formData, setFormData] = useState({
     nomeDoador: '',
     valorDoacao: '',
     formaPagamento: 'Cartão de Crédito',
     emailDoador: '',
   });
 
+  const [totalDoacoes, setTotalDoacoes] = useState(0);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Dados do formulário de doação:', formData);
+
+    const valorDoacao = parseFloat(formData.valorDoacao);
+    if (!isNaN(valorDoacao)) {
+      console.log('Dados do formulário de doação:', formData);
+
+      setTotalDoacoes((prevTotal) => prevTotal + valorDoacao);
+      console.log('Valor Total de Doações:', totalDoacoes.toFixed(2));
+    } else {
+      console.log('Valor de doação inválido.');
+    }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value }); //salva os dados
+    setFormData({ ...formData, [name]: value });
   };
 
   return (
-    <div className="doacao-container"> {/* bloco do container */}
+    <div className="doacao-container">
       <h2>Faça uma Doação</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="nomeDoador">Nome do Doador:</label> {/* salva informação na variavel*/}
+          <label htmlFor="nomeDoador">Nome do Doador:</label>
           <input
             type="text"
             id="nomeDoador"
@@ -36,7 +47,7 @@ const Doacoes = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="valorDoacao">Valor da Doação (R$):</label> {/* salva informacao na variavel*/}
+          <label htmlFor="valorDoacao">Valor da Doação (R$):</label>
           <input
             type="number"
             id="valorDoacao"
@@ -48,7 +59,7 @@ const Doacoes = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="formaPagamento">Forma de Pagamento:</label> {/* salva informacao na variavel*/}
+          <label htmlFor="formaPagamento">Forma de Pagamento:</label>
           <select
             id="formaPagamento"
             name="formaPagamento"
@@ -63,7 +74,7 @@ const Doacoes = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="emailDoador">Email do Doador:</label> {/* salva informacao na variavel*/}
+          <label htmlFor="emailDoador">Email do Doador:</label>
           <input
             type="email"
             id="emailDoador"
@@ -74,7 +85,7 @@ const Doacoes = () => {
           />
         </div>
 
-        <button type="submit">Enviar Doação</button> {/*envia doacao (demonstrativo) */}
+        <button type="submit">Enviar Doação</button>
       </form>
     </div>
   );

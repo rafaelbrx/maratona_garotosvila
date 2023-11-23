@@ -1,10 +1,10 @@
-import React, { useState } from 'react'; //importa framework react e usestate
-import './Matricula.css'; //importa css para estilizar
+import React, { useState } from 'react';
+import './Matricula.css';
 
-const Matricula = () => { 
-  const [formData, setFormData] = useState({ //estrutura dados do formulario
+const Matricula = () => {
+  const [formData, setFormData] = useState({
     nomeAluno: '',
-    curso: '',
+    curso: 'Futebol', 
     endereco: '',
     nomePais: '',
     telefonePais: '',
@@ -12,13 +12,12 @@ const Matricula = () => {
   });
 
 
-  //armazena os dados do formulário no local storage
   const [matriculas, setMatriculas] = useState(() => {
     const storedMatriculas = localStorage.getItem('matriculas');
     return storedMatriculas ? JSON.parse(storedMatriculas) : [];
   });
 
-  //nova matricula - estrutura
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -39,13 +38,17 @@ const Matricula = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  
+
+  const updateBanco = (data) => {
+    localStorage.setItem('matriculas', JSON.stringify(data));
   };
 
-  //salva matricula no local storage
-  const updateBanco = (data) => {
-    localStorage.setItem('matricula', JSON.stringify(data));
-  };
 
   return (
     <div className="matricula-container"> {/*bloco da matricula*/}
