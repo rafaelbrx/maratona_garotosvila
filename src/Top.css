@@ -1,0 +1,19 @@
+.top-navbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgb(14, 19, 80);
+    padding: 15px; 
+    margin-inline: 25px;
+    border-radius: 10px;
+  }
+  
+  .top-navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 150px; 
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    text-shadow: 8px 4px 8px rgba(0, 0, 0, 1);
+  }
